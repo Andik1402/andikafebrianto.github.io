@@ -10,3 +10,155 @@
 section {
     padding-top: 5rem;
 }
+
+
+/* navbar */
+
+header {
+    position: relative;
+    max-width: width 100%;
+    padding: 5px;
+    box-sizing: border-box;
+    border-radius: 1px;
+}
+
+.logo {
+    margin-left: 100px;
+    text-align: center;
+    float: left;
+    text-decoration: none;
+}
+
+.logo a {
+    color: white;
+    font-size: 20px;
+    text-decoration: none;
+    font-weight: 600;
+    text-align: center;
+    height: 20px;
+    line-height: 60px;
+}
+
+.clearfix {
+    clear: both;
+}
+
+nav {
+    float: right;
+}
+
+nav ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    list-style: none;
+}
+
+nav ul li a {
+    color: white;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    margin: 10px 0;
+    padding: 8px 8px;
+    display: block;
+    text-decoration: none;
+}
+
+nav ul li a.active,
+nav ul li a:hover {
+    border-radius: 9px;
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    background: #e2edff;
+}
+
+@media screen and (max-width: 768px) {
+    header {
+        margin: 15px;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .menu-toggle {
+        float: right;
+        width: 40px;
+        height: 40px;
+        margin: 10px;
+        font-size: 30px;
+        /* background-color: black; */
+        cursor: pointer;
+    }
+    .menu-toggle::before {
+        content: "\f0c9";
+        font-family: fontAwesome;
+        line-height: 40px;
+        color: white;
+    }
+    .menu-toggle.active::before {
+        content: "\f00d";
+        font-family: fontAwesome;
+        color: white;
+    }
+    nav {
+        display: none;
+    }
+    nav.active {
+        display: block;
+        width: 100%;
+    }
+    nav.hide {
+        /* display: block; */
+        /* width: 100%; */
+    }
+    nav.active ul {
+        display: block;
+    }
+    nav.active ul a {
+        margin: 0%;
+    }
+    section.portofolio #portofolio {
+        min-height: 1500px;
+    }
+    section.about #mobile-about {
+        min-height: 500px;
+    }
+    section.contact #mobile-contact {
+        min-height: 900px;
+    }
+    /* overlay mobile */
+    .overlay img {
+        height: auto;
+        width: auto;
+        box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.9);
+    }
+}
+
+@media screen and (max-width: 568px) {
+    .logo a {
+        margin-left: -20px;
+        color: white;
+        font-size: 16px;
+        text-decoration: none;
+        font-weight: 400;
+        text-align: center;
+        height: 15px;
+        line-height: 40px;
+    }
+    .menu-toggle {
+        float: right;
+        width: 20px;
+        height: 20px;
+        margin-top: 5px;
+        font-size: 20px;
+        /* background-color: black; */
+        cursor: pointer;
+    }
+    .menu-toggle::before {
+        content: "\f0c9";
+        font-family: fontAwesome;
+        line-height: 12px;
+        color: white;
+    }
+}

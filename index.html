@@ -14,36 +14,32 @@
 
     <!-- my css -->
     <link rel="stylesheet" href="style.css" />
+
+    <!-- fontawesome -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+
     <title>portofolio | Andika Febrianto</title>
 </head>
 
 <body id="home">
     <!-- navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm fixed-top">
-        <div class="container">
-            <a class="navbar-brand" href="#">Andika Febrianto</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#home">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#about">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#projects">Project</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#contact">Contact</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+    <header class="bg-primary fixed-top">
+        <div class="logo"><a href="">Andika Febrianto</a></div>
+        <div class="menu-toggle"></div>
+        <nav>
+            <ul class="navigasi pe-5">
+                <li><a href="#home" class="active, page-scroll">Home</a></li>
+                <li><a href="#about" class="page-scroll">About</a></li>
+                <li><a href="#projects" class="page-scroll">Projects</a></li>
+                <li><a href="#contact" class="page-scroll">Contact</a></li>
+            </ul>
+        </nav>
+
+        <div class="clearfix"></div>
+    </header>
+
     <!-- nabar end -->
+
     <!-- jumbotron -->
     <section class="jumbotron text-center">
         <img src="img/Group 1 1.png" alt="andika febrianto" width="150" />
@@ -68,8 +64,8 @@
                     <h2>About me</h2>
                 </div>
                 <div class="row justify-content-center fs-5 text-center">
-                    <div class="col-md-4 text-justify">
-                        <p>Hallo perkenalkan nama saya Andika febrianto saya adalah mahasiswa Universitas Gunadarma Jurusan Sistem Informasi ini adalah website potopolio saya yang saya publikasikan.</p>
+                    <div class="col-md-4 text-justify text-start">
+                        <p>Hallo perkenalkan nama saya Andika Febrianto. Saya adalah mahasiswa Universitas Gunadarma Jurusan Sistem Informasi ini adalah website potopolio saya yang saya publikasikan.</p>
                     </div>
                     <div class="col-md-4 text-start">
                         <p>Hobi saya saat ini adakah mengkonfigurasi sebuah jaringan dan mempelajari bahasa pemograman. Salam kenal semua <i class="bi bi-emoji-smile"></i></p>
@@ -190,8 +186,67 @@
         <p>Created with <i class="bi bi-heart-fill text-danger"></i> by <a class="text-white fw-bold" href="https://www.instagram.com/andika.fe_/">Andika Febrianto</a></p>
     </footer>
     <!-- footer end -->
-
+    <!-- bootstrap JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+    <!-- bootstrap JavaScript end -->
+
+    <!-- my javascript -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $(".menu-toggle").click(function() {
+                $(".menu-toggle").toggleClass("active");
+                $("nav").toggleClass("active");
+            });
+        });
+
+        $(document).ready(function() {
+            // animasi scrolling
+            $("a.page-scroll").on("click", function(event) {
+                // membuat this.has memiliki nilai sebelum menganti default
+                if (this.hash !== "") {
+                    // menecegah klik tautan kembali ke dafault
+                    event.preventDefault();
+
+                    // simpen hash
+                    var hash = this.hash;
+
+                    // mengunakan jquery's animate() method dan page scrolling
+                    // Nomor opsional (800) menentukan jumlah milidetik yang diperlukan untuk menggulir ke area yang ditentukan
+                    $("html, body").animate({
+                            scrollTop: $(hash).offset().top,
+                        },
+                        800,
+                        function() {
+                            // menambahkan hash(#) to url ketika selesai scroll(default click behavior)
+                            window.location.hash = hash;
+                        }
+                    );
+                }
+                // end if
+            });
+        });
+
+        $(document).ready(function() {
+            $(window).scroll(function() {
+                if ($(window).scrollTop() > 100) {
+                    $("#tombolScrollTop").fadeIn();
+                } else {
+                    $("#tombolScrollTop").fadeOut();
+                }
+            });
+        });
+
+        function scrolltoptop() {
+            $("html, body").animate({
+                    scrollTop: 0,
+                },
+                500
+            );
+        }
+    </script>
+    <!-- my javasript end -->
 </body>
 
 </html>
