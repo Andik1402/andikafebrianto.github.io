@@ -87,7 +87,6 @@ nav ul li a:hover {
         height: 40px;
         margin: 10px;
         font-size: 30px;
-        /* background-color: black; */
         cursor: pointer;
     }
     .menu-toggle::before {
