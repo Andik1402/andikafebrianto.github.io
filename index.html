@@ -18,12 +18,15 @@
     <!-- fontawesome -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
 
+    <!-- AOS -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
     <title>portofolio | Andika Febrianto</title>
 </head>
 
 <body id="home">
     <!-- navbar -->
-    <header class="bg-primary fixed-top">
+    <header class="navigasibar bg-primary fixed-top">
         <div class="logo"><a href="">Andika Febrianto</a></div>
         <div class="menu-toggle"></div>
         <nav>
@@ -59,16 +62,21 @@
     <!-- about -->
     <section id="about">
         <div class="container">
-            <div class="row text-center mb-3">
+            <div class="row text-center mb-3" data-aos-offset="400">
                 <div class="col-md">
-                    <h2>About me</h2>
+                    <h2 data-aos="fade-down">About me</h2>
                 </div>
                 <div class="row justify-content-center fs-5 text-center">
-                    <div class="col-md-4 text-justify text-start">
-                        <p>Hallo perkenalkan nama saya Andika Febrianto. Saya adalah mahasiswa Universitas Gunadarma Jurusan Sistem Informasi ini adalah website potofolio saya yang saya publikasikan.</p>
+                    <div class="col-md-4 text-justify text-start" data-aos="fade-right">
+                        <p>
+                            Hallo perkenalkan nama saya Andika Febrianto. Saya adalah mahasiswa Universitas Gunadarma Jurusan Sistem Informasi ini adalah website potofolio saya yang saya publikasikan. Hobi saya saat ini adalah mengkonfigurasi sebuah jaringan dan mempelajari bahasa
+                            pemograman.
+                        </p>
                     </div>
-                    <div class="col-md-4 text-start">
-                        <p>Hobi saya saat ini adakah mengkonfigurasi sebuah jaringan dan mempelajari bahasa pemograman. Salam kenal semua <i class="bi bi-emoji-smile text-danger"></i></p>
+                    <div class="col-md-4 text-start" data-aos="fade-left" data-aos-delay="200">
+                        <p>
+                            Salam kenal semua <i class="bi bi-emoji-smile text-danger"></i> dan ini adalah website pertama saya yang saya publikasikan. jika kalian ingin memberikan saran kepada saya anda bisa memasukannya diform contact. terimakasih
+                        </p>
                     </div>
                 </div>
             </div>
@@ -194,11 +202,8 @@
         <p>Created with <i class="bi bi-heart-fill text-danger"></i> by <a class="text-white fw-bold" href="https://www.instagram.com/andika.fe_/">Andika Febrianto</a></p>
     </footer>
     <!-- footer end -->
-    <!-- bootstrap JavaScript -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
-    <!-- bootstrap JavaScript end -->
 
-    <!-- my javascript -->
+    <!-- javascript jquery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
     <script type="text/javascript">
@@ -254,8 +259,10 @@
             );
         }
     </script>
-    <!-- my javasript end -->
+    <!-- javascript jquery end -->
 
+    <!-- my javasript bootstarp-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
     <script>
         const scriptURL = "https://script.google.com/macros/s/AKfycbwpIhM9QeAASTRD4EMHoYTxdEn0wDKifSsh_J1UIv-1751jTm3YOtk17b3NW6lOJ5c/exec";
         const form = document.forms["pesan-kontak"];
@@ -286,6 +293,34 @@
                 .catch((error) => console.error("Error!", error.message));
         });
     </script>
+    <!-- javascript bootstrap end -->
+
+    <!-- javascript aos -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            once: true,
+            duration: 2000,
+        });
+    </script>
+    <!-- javascript aos end -->
+    <!-- javascript GASP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"></script>
+    <script>
+        gsap.from(".navigasibar", {
+            duration: 1.5,
+            y: "-100%",
+            opacity: 0,
+            ease: "bounce",
+        });
+
+        gsap.from(".jumbotron img", {
+            duration: 1,
+            rotateY: 360,
+            opacity: 0,
+        });
+    </script>
+    <!-- javascript GASP end-->
 </body>
 
 </html>
